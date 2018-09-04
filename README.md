@@ -22,6 +22,8 @@ yarn global add geektime-cli
 
     login <phone> <password>  登录极客时间
     products                  获取已购列表
+    articles <cid>            获取文章列表
+    article <id>              获取文章内容
 ```
 
 ## License
