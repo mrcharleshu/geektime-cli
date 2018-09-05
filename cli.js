@@ -3,6 +3,7 @@
 const program = require('commander');
 const Conf = require('conf');
 const Geektime = require('geektime');
+const Turndown = require('turndown');
 const pkg = require('./package.json');
 
 const config = new Conf();
@@ -64,9 +65,10 @@ program
   .action(async (id) => {
     const client = getClient();
     const res = await client.article(id);
+    const content = (new Turndown()).turndown(res.article_content);
 
     console.log(res.article_title);
-    console.log(res.article_content);
+    console.log(content);
   });
 
 program.parse(process.argv);

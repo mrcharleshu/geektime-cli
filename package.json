@@ -19,6 +19,7 @@
     "commander": "^2.17.1",
     "conf": "^2.0.0",
     "geektime": "^1.0.1",
-    "inquirer": "^6.2.0"
+    "inquirer": "^6.2.0",
+    "turndown": "^5.0.1"
   }
 }
