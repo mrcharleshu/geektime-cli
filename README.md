@@ -1,6 +1,6 @@
 # geektime-cli
 
-> CLI for time.geekbang.org (极客时间)
+> CLI for <https://time.geekbang.org> (极客时间)
 
 ## INSTALL
 ```bash
@@ -24,6 +24,7 @@ yarn global add geektime-cli
     products                  获取已购列表
     articles <cid>            获取文章列表
     article <id>              获取文章内容
+    export [options] <cid>    导出专栏文章
 ```
 
 ## License
