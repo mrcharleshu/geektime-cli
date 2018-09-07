@@ -10,7 +10,7 @@ yarn global add geektime-cli
 ```
 
 ## USAGE
-```bash
+```
   Usage: geektime [options] [command]
 
   Options:
@@ -26,6 +26,10 @@ yarn global add geektime-cli
     article <id>              获取文章内容
     export [options] <cid>    导出专栏文章
 ```
+
+### export
+
+![screenshot of exporting](screenshot.gif)
 
 ## License
 
