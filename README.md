@@ -1,5 +1,9 @@
 # geektime-cli
 
+<div align="center">
+  <img src="screenshot-export.gif" alt="geektime-cli screenshot">
+</div>
+
 > CLI for <https://time.geekbang.org> (极客时间)
 
 ## INSTALL
@@ -27,10 +31,6 @@ yarn global add geektime-cli
     export [options] <cid>    导出专栏文章
     mp3 [options] <cid>       导出专栏音频
 ```
-
-### export
-
-![screenshot of exporting](screenshot.gif)
 
 ## License
 
