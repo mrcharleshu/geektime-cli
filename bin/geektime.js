@@ -12,7 +12,7 @@ const { ensureDirSync } = require('fs-extra');
 const pLimit = require('p-limit');
 const ProgressBar = require('progress');
 const opn = require('opn');
-const pkg = require('./package.json');
+const pkg = require('../package.json');
 
 const limit = pLimit(10); // avoid API rate limit
 const mp3Limit = pLimit(2);

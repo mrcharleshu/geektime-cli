@@ -7,7 +7,7 @@
   "author": "shawjia <shawjia@gmail.com> (github.com/shawjia)",
   "license": "MIT",
   "bin": {
-    "geektime": "cli.js"
+    "geektime": "bin/geektime.js"
   },
   "devDependencies": {
     "ava": "^0.25.0",
@@ -16,8 +16,8 @@
     "eslint-plugin-import": "^2.14.0"
   },
   "files": [
-    "index.js",
-    "cli.js"
+    "bin",
+    "index.js"
   ],
   "keywords": [
     "cli",
