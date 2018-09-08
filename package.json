@@ -27,6 +27,7 @@
   "dependencies": {
     "commander": "^2.17.1",
     "conf": "^2.0.0",
+    "download": "^7.1.0",
     "filenamify": "^2.1.0",
     "fs-extra": "^7.0.0",
     "geektime": "^1.0.1",

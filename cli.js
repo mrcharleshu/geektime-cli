@@ -4,7 +4,8 @@ const program = require('commander');
 const Conf = require('conf');
 const Geektime = require('geektime');
 const Turndown = require('turndown');
-const fs = require('fs');
+const download = require('download');
+const { writeFileSync } = require('fs');
 const path = require('path');
 const filenamify = require('filenamify');
 const { ensureDirSync } = require('fs-extra');
@@ -14,6 +15,7 @@ const opn = require('opn');
 const pkg = require('./package.json');
 
 const limit = pLimit(10); // avoid API rate limit
+const mp3Limit = pLimit(2);
 const config = new Conf();
 
 function getClient() {
@@ -96,7 +98,7 @@ program
 
     const bar = new ProgressBar(
       '[:bar] :percent\n  [:current/:total] :title',
-      { total: list.length, title: '' },
+      { total: list.length, title: '', width: 20 },
     );
 
     await Promise.all(list.map(async v => limit(async () => {
@@ -108,7 +110,7 @@ program
       const coverText = cover ? `![cover](${cover})` : '';
       const mp3Text = mp3 ? `mp3: ${mp3}` : '';
 
-      fs.writeFileSync(
+      writeFileSync(
         path.join(dir, `${id}. ${filenamify(title)}.md`),
         `# ${title}
 
@@ -130,6 +132,49 @@ program
     process.exit(0);
   });
 
+program
+  .command('mp3 <cid>')
+  .description('导出专栏音频')
+  .option('-o, --output [dir]', '导出目录')
+  .action(async (cid, options) => {
+    const client = getClient();
+    const { list } = await client.audios(cid);
+
+    if (list.length === 0) {
+      console.log('音频列表为空');
+    }
+
+    const dir = path.join(options.output || process.cwd(), cid, 'mp3');
+    ensureDirSync(dir);
+
+    const bar = new ProgressBar(
+      'ALL: [:bar] :percent\n  [:current/:total] :title',
+      { total: list.length, title: '', width: 20 },
+    );
+
+    await Promise.all(list.map(async v => mp3Limit(async () => {
+      const { id, article_title: title, audio_download_url: mp3 } = v;
+
+      bar.tick({ title });
+
+      const downBar = new ProgressBar(
+        '    [:title] [:bar] :percent', { total: 100, clear: true, width: 20 },
+      );
+
+      downBar.tick({ title: `${title.slice(0, 20)}...` });
+
+      await download(mp3, dir, { filename: `${id}. ${filenamify(title)}.mp3` })
+        .on('downloadProgress', (progress) => {
+          downBar.update(progress.percent);
+        });
+    })));
+
+    console.log(`audios saved to ${dir}`);
+
+    opn(dir);
+
+    process.exit(0);
+  });
 
 if (!process.argv.slice(2).length) {
   program.outputHelp();

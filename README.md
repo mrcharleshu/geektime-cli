@@ -25,6 +25,7 @@ yarn global add geektime-cli
     articles <cid>            获取文章列表
     article <id>              获取文章内容
     export [options] <cid>    导出专栏文章
+    mp3 [options] <cid>       导出专栏音频
 ```
 
 ### export
