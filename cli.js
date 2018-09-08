@@ -10,7 +10,7 @@ const filenamify = require('filenamify');
 const { ensureDirSync } = require('fs-extra');
 const pLimit = require('p-limit');
 const ProgressBar = require('progress');
-
+const opn = require('opn');
 const pkg = require('./package.json');
 
 const limit = pLimit(10); // avoid API rate limit
@@ -123,7 +123,16 @@ program
       bar.tick({ title });
     })));
 
-    console.log('done');
+    console.log(`articles saved to ${dir}`);
+
+    opn(dir);
+
+    process.exit(0);
   });
+
+
+if (!process.argv.slice(2).length) {
+  program.outputHelp();
+}
 
 program.parse(process.argv);
