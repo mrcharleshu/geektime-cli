@@ -7,7 +7,7 @@ const article = require('../lib/article');
 const articles = require('../lib/articles');
 const exportArticles = require('../lib/exportArticles');
 const exportMp3 = require('../lib/exportMp3');
-const configDir = require('../lib/configDir');
+const configCli = require('../lib/configCli');
 const info = require('../lib/info');
 const login = require('../lib/login');
 const products = require('../lib/products');
@@ -20,9 +20,11 @@ program
   .action(login);
 
 program
-  .command('config <dir>')
-  .description('设置导出目录')
-  .action(configDir);
+  .command('config')
+  .description('调整参数设置')
+  .option('-d, --dir <dir>', '默认导出目录')
+  .option('-o, --auto-open <open>', '自动打开目录 [0/1]')
+  .action(configCli);
 
 program
   .command('info')

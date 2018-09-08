@@ -25,7 +25,7 @@ yarn global add geektime-cli
   Commands:
 
     login <phone> <password>  登录极客时间
-    config <dir>              设置导出目录
+    config [options]          调整参数设置
     info                      显示设置信息
     products                  获取已购列表
     articles <cid>            获取文章列表
@@ -33,6 +33,19 @@ yarn global add geektime-cli
     export [options] <cid>    导出专栏文章
     mp3 [options] <cid>       导出专栏音频
 
+```
+
+### `geektime config`
+```
+  Usage: geektime config [options]
+
+  调整参数设置
+
+  Options:
+
+    -d, --dir <dir>         默认导出目录
+    -o, --auto-open <open>  自动打开目录 [0/1]
+    -h, --help              output usage information
 ```
 
 ## License
