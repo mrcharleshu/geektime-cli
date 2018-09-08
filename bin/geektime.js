@@ -7,6 +7,8 @@ const article = require('../lib/article');
 const articles = require('../lib/articles');
 const exportArticles = require('../lib/exportArticles');
 const exportMp3 = require('../lib/exportMp3');
+const configDir = require('../lib/configDir');
+const info = require('../lib/info');
 const login = require('../lib/login');
 const products = require('../lib/products');
 
@@ -16,6 +18,16 @@ program
   .command('login <phone> <password>')
   .description('登录极客时间')
   .action(login);
+
+program
+  .command('config <dir>')
+  .description('设置导出目录')
+  .action(configDir);
+
+program
+  .command('info')
+  .description('显示设置信息')
+  .action(info);
 
 program
   .command('products')
