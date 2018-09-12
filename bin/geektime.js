@@ -16,11 +16,13 @@ program.version(pkg.version);
 
 program
   .command('login <phone> <password>')
+  .alias('l')
   .description('登录极客时间')
   .action(login);
 
 program
   .command('config')
+  .alias('c')
   .description('调整参数设置')
   .option('-d, --dir <dir>', '默认导出目录')
   .option('-o, --auto-open <open>', '自动打开目录 [0/1]')
@@ -28,6 +30,7 @@ program
 
 program
   .command('info')
+  .alias('i')
   .description('显示设置信息')
   .action(info);
 
@@ -48,6 +51,7 @@ program
 
 program
   .command('export <cid>')
+  .alias('e')
   .description('导出专栏文章')
   .option('-o, --output [dir]', '导出目录')
   .action(exportArticles);

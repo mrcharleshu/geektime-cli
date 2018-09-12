@@ -24,14 +24,14 @@ yarn global add geektime-cli
 
   Commands:
 
-    login <phone> <password>  登录极客时间
-    config [options]          调整参数设置
-    info                      显示设置信息
-    products                  获取已购列表
-    articles <cid>            获取文章列表
-    article <id>              获取文章内容
-    export [options] <cid>    导出专栏文章
-    mp3 [options] <cid>       导出专栏音频
+    login|l <phone> <password>  登录极客时间
+    config|c [options]          调整参数设置
+    info|i                      显示设置信息
+    products                    获取已购列表
+    articles <cid>              获取文章列表
+    article <id>                获取文章内容
+    export|e [options] <cid>    导出专栏文章
+    mp3 [options] <cid>         导出专栏音频
 
 ```
 
