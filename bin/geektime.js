@@ -5,8 +5,7 @@ const pkg = require('../package.json');
 
 const article = require('../lib/article');
 const articles = require('../lib/articles');
-const exportArticles = require('../lib/exportArticles');
-const exportMp3 = require('../lib/exportMp3');
+const handleExport = require('../lib/handleExport');
 const configCli = require('../lib/configCli');
 const info = require('../lib/info');
 const login = require('../lib/login');
@@ -52,15 +51,10 @@ program
 program
   .command('export <cid>')
   .alias('e')
-  .description('导出专栏文章')
+  .description('导出专栏内容')
   .option('-o, --output [dir]', '导出目录')
-  .action(exportArticles);
-
-program
-  .command('mp3 <cid>')
-  .description('导出专栏音频')
-  .option('-o, --output [dir]', '导出目录')
-  .action(exportMp3);
+  .option('-m, --with-mp3', '导出专栏音频')
+  .action(handleExport);
 
 program.parse(process.argv);
 

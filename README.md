@@ -30,10 +30,12 @@ yarn global add geektime-cli
     products                    获取已购列表
     articles <cid>              获取文章列表
     article <id>                获取文章内容
-    export|e [options] <cid>    导出专栏文章
-    mp3 [options] <cid>         导出专栏音频
+    export|e [options] <cid>    导出专栏内容
 
 ```
+
+### `geektime export -m, --with-mp3`
+导出专栏音频
 
 ### `geektime config`
 ```
