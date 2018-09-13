@@ -53,7 +53,7 @@ program
   .alias('e')
   .description('导出专栏内容')
   .option('-o, --output [dir]', '导出目录')
-  .option('-m, --with-mp3', '导出专栏音频')
+  .option('-m, --mp3', '导出专栏音频')
   .action(handleExport);
 
 program.parse(process.argv);

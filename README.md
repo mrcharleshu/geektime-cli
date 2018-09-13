@@ -34,7 +34,7 @@ yarn global add geektime-cli
 
 ```
 
-### `geektime export -m, --with-mp3`
+### `geektime export -m, --mp3`
 导出专栏音频
 
 ### `geektime config`
