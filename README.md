@@ -45,9 +45,9 @@ yarn global add geektime-cli
 
   Options:
 
-    -d, --dir <dir>         默认导出目录
-    -o, --auto-open <open>  自动打开目录 [0/1]
-    -h, --help              output usage information
+    -d, --dir <dir>  设置文章导出目录
+    -m, --mp3 <dir>  设置音频导出目录
+    -h, --help       output usage information
 ```
 
 ## License

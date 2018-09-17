@@ -23,8 +23,8 @@ program
   .command('config')
   .alias('c')
   .description('调整参数设置')
-  .option('-d, --dir <dir>', '默认导出目录')
-  .option('-o, --auto-open <open>', '自动打开目录 [0/1]')
+  .option('-d, --dir <dir>', '设置文章导出目录')
+  .option('-m, --mp3 <dir>', '设置音频导出目录')
   .action(configCli);
 
 program
