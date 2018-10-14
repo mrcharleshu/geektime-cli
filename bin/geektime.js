@@ -25,6 +25,7 @@ program
   .description('调整参数设置')
   .option('-d, --dir <dir>', '设置文章导出目录')
   .option('-m, --mp3 <dir>', '设置音频导出目录')
+  .option('-v, --video <dir>', '设置视频导出目录')
   .action(configCli);
 
 program
@@ -53,7 +54,8 @@ program
   .alias('e')
   .description('导出专栏内容')
   .option('-o, --output [dir]', '导出目录')
-  .option('-m, --mp3', '导出专栏音频')
+  .option('-m, --mp3', '导出音频')
+  .option('-v, --video', '导出视频')
   .action(handleExport);
 
 program.parse(process.argv);
