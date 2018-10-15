@@ -1,7 +1,7 @@
 # geektime-cli
 
 <div align="center">
-  <img src="screenshot-export.gif" alt="geektime-cli screenshot">
+  <img src="https://user-images.githubusercontent.com/361645/46958751-1c82b000-d0cd-11e8-89a4-3fe9d0b62485.gif" alt="geektime-cli screenshot">
 </div>
 
 > CLI for <https://time.geekbang.org> (极客时间)
