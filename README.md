@@ -34,8 +34,26 @@ yarn global add geektime-cli
 
 ```
 
-### `geektime export -m, --mp3`
+### `geektime export`
+
+```
+  Usage: export|e [options] <cid>
+
+  导出专栏 文章/音频/视频
+
+  Options:
+
+    -o, --output [dir]  导出目录
+    -m, --mp3           导出音频
+    -v, --video         导出视频
+    -h, --help          output usage information
+```
+
+#### `geektime export -m, --mp3`
 导出专栏音频
+
+#### `geektime export -v, --video`
+导出专栏视频
 
 ### `geektime config`
 ```
@@ -45,9 +63,10 @@ yarn global add geektime-cli
 
   Options:
 
-    -d, --dir <dir>  设置文章导出目录
-    -m, --mp3 <dir>  设置音频导出目录
-    -h, --help       output usage information
+    -d, --dir <dir>    设置文章导出目录
+    -m, --mp3 <dir>    设置音频导出目录
+    -v, --video <dir>  设置视频导出目录
+    -h, --help         output usage information
 ```
 
 ## License

@@ -52,7 +52,7 @@ program
 program
   .command('export <cid>')
   .alias('e')
-  .description('导出专栏内容')
+  .description('导出专栏 文章/音频/视频')
   .option('-o, --output [dir]', '导出目录')
   .option('-m, --mp3', '导出音频')
   .option('-v, --video', '导出视频')
