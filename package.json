@@ -31,7 +31,7 @@
     "download": "^7.1.0",
     "filenamify": "^2.1.0",
     "fs-extra": "^7.0.0",
-    "geektime": "^1.0.1",
+    "geektime": "^1.1.1",
     "p-limit": "^2.0.0",
     "progress": "^2.0.0",
     "turndown": "^5.0.1"
