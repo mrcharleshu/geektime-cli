@@ -17,6 +17,7 @@ program
   .command('login <phone> <password>')
   .alias('l')
   .description('登录极客时间')
+  .option('-c, --code <code>', '指定国家区号')
   .action(login);
 
 program
