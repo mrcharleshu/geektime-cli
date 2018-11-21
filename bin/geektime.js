@@ -51,7 +51,7 @@ program
   .action(article);
 
 program
-  .command('export <cid>')
+  .command('export <cid> [otherCids...]')
   .alias('e')
   .description('导出专栏 文章/音频/视频')
   .option('-o, --output [dir]', '导出目录')
