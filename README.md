@@ -83,6 +83,11 @@ yarn global add geektime-cli
     -h, --help         output usage information
 ```
 
+## EXAMPLE
+- geektime products | sed -n '/:/p' | awk -F ":" '{print $1}' | xargs -I {} geektime export -d {}
+- geektime products | sed -n '/:/p' | awk -F ":" '{print $1}' | xargs -I {} geektime export -m {}
+- geektime products | sed -n '/:/p' | awk -F ":" '{print $1}' | xargs -I {} geektime export -v {}
+
 ## License
 
 MIT
