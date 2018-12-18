@@ -84,7 +84,7 @@ yarn global add geektime-cli
 ```
 
 ## EXAMPLE
-- geektime products | sed -n '/:/p' | awk -F ":" '{print $1}' | xargs -I {} geektime export -d {}
+- geektime products | sed -n '/:/p' | awk -F ":" '{print $1}' | xargs -I {} geektime export {}
 - geektime products | sed -n '/:/p' | awk -F ":" '{print $1}' | xargs -I {} geektime export -m {}
 - geektime products | sed -n '/:/p' | awk -F ":" '{print $1}' | xargs -I {} geektime export -v {}
 
